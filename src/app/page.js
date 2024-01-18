@@ -8,16 +8,16 @@ import Footer from "./component/Footer";
 import AchievementsSection from "./component/AchievementsSection";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#000000] ">
-      <Navbar />
-      <div className="container mt-24 mx-auto py-4 px-12">
+    <main className="flex min-h-screen flex-col bg-[#000000]">
+       <Navbar />
+      <div className="container mt-24 mx-auto py-4 px-5" >
         <HeroSection />
-        <AchievementsSection/>
+        <AchievementsSection />
         <AboutSections />
         <ProjectSections />
         <EmailSection />
       </div>
-      <Footer />
+       <Footer />
     </main>
   );
 }

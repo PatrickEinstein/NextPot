@@ -136,7 +136,7 @@ const projectsData = [
     title: "Dotnet Certificate",
     description: "Dotnet Certificate in udemy",
     image: "/images/projects/ASP.jpg",
-    tag: ["Certifications"],
+    tag: ["Certs"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -145,7 +145,7 @@ const projectsData = [
     title: "React Certificate",
     description: "React Certificate in udemy",
     image: "/images/projects/77085.jpg",
-    tag: ["Certifications"],
+    tag: ["Certs"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -154,7 +154,7 @@ const projectsData = [
     title: "HTML & CSS Certificate",
     description: "HTML & CSS Certificate in udemy",
     image: "/images/projects/76975.jpg",
-    tag: ["Certifications"],
+    tag: ["Certs"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -173,7 +173,7 @@ const ProjectSections = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white">My Projects</h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="text-white flex flex-row justify-center items-center gap-1 py-6">
         <ProjectTag
           onClick={() => handleTagChange("All")}
           name="All"
@@ -190,9 +190,9 @@ const ProjectSections = () => {
           isSelected={tag === "Mobile"}
         />
         <ProjectTag
-          onClick={() => handleTagChange("Certifications")}
-          name="Certifications"
-          isSelected={tag === "Certifications"}
+          onClick={() => handleTagChange("Certs")}
+          name="Certs"
+          isSelected={tag === "Certs"}
         />
       </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
