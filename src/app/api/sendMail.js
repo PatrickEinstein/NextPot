@@ -1,10 +1,9 @@
-import Emailer from "../../Utils/SendEmail";
-
+import { Emailer } from "../component/Utils/SendEmail";
 export const MailController = async (req, res) => {
   const { to, subject, text } = req.body;
 
   try {
-    await sendEmail(to, subject, text);
+    await Emailer(to, subject, text);
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
     console.error("Error sending email:", error);
