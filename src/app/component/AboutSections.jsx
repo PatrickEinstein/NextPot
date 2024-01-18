@@ -2,7 +2,6 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import image from '../../../public/images/projects/Passport.jpeg'
 
 const TAB_DATA = [
   {
@@ -73,7 +72,7 @@ const AboutSections = () => {
     <sections className="text-white ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-          src={image}
+          src="/images/projects/Passport.jpeg"
           alt="Passport"
           width={500}
           height={500}
