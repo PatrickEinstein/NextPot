@@ -147,7 +147,7 @@ const AboutSections = () => {
               selectTab={() => handleTabChage("certifications")}
               active={tab === "certifications"}
             >
-              Certifications
+              Certs
             </TabButton>
           </div>
           <div className="mt-8">
