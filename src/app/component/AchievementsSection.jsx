@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import AnimatedNumber from 'react-animated-number';
-// const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+ import AnimatedNumber from 'react-animated-number';
+// const AnimatedNumber = dynamic(() => import("react-animated-numbers"), {
 //   ssr: false,
 // });
 
@@ -38,10 +38,15 @@ const AchievementsSection = () => {
               className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
             >
               <h2 className="text-white text-4xl font-bold flex flex-row">
-                {achievement.prefix}
+                {achievement.prefix || ""}
                 <AnimatedNumber
-                  component="text"
-                  value={achievement.value}
+                  value={
+                    typeof achievement.value === "number"
+                      ? achievement.value
+                      : !isNaN(parseFloat(achievement.value))
+                      ? parseFloat(achievement.value)
+                      : 5
+                  }
                   style={{
                     transition: "0.8s ease-out",
                     fontSize: 48,
@@ -50,10 +55,11 @@ const AchievementsSection = () => {
                   frameStyle={(perc) =>
                     perc === 100 ? {} : { backgroundColor: "#000000" }
                   }
-                  duration={2000}
+                  duration={500}
                   // formatValue={(n) => prettyBytes(n)}
                 />
-                {achievement.postfix}
+
+                {achievement.postfix || ""}
               </h2>
               <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
             </div>
