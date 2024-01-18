@@ -15,22 +15,22 @@ const EmailSection = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    // const response = await fetch("../api/sendMail.js", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-    // const resData = await response.json();
+    const response = await fetch("../api/sendMail.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const resData = await response.json();
 
-    // if (response.status === 200) {
-    //   console.log("Message sent.");
-    //   setEmailSubmitted(true);
-    // } else {
-    //   setEmailSubmitted(false);
-    //   console.log(resData);
-    // }
+    if (response.status === 200) {
+      console.log("Message sent.");
+      setEmailSubmitted(true);
+    } else {
+      setEmailSubmitted(false);
+      console.log(resData);
+    }
   }, []);
 
   return (
