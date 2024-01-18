@@ -1,10 +1,6 @@
 "use client";
 import React from "react";
-import dynamic from "next/dynamic";
- import AnimatedNumber from 'react-animated-number';
-// const AnimatedNumber = dynamic(() => import("react-animated-numbers"), {
-//   ssr: false,
-// });
+import AnimatedNumbers from "react-animated-numbers";
 
 const achievementsList = [
   {
@@ -39,14 +35,9 @@ const AchievementsSection = () => {
             >
               <h2 className="text-white text-4xl font-bold flex flex-row">
                 {achievement.prefix || ""}
-                <AnimatedNumber
-                  value={
-                    typeof achievement.value === "number"
-                      ? achievement.value
-                      : !isNaN(parseFloat(achievement.value))
-                      ? parseFloat(achievement.value)
-                      : 5
-                  }
+                <AnimatedNumbers
+                  includeComma
+                  animateToNumber={achievement.value}
                   style={{
                     transition: "0.8s ease-out",
                     fontSize: 48,
@@ -55,8 +46,10 @@ const AchievementsSection = () => {
                   frameStyle={(perc) =>
                     perc === 100 ? {} : { backgroundColor: "#000000" }
                   }
-                  duration={500}
-                  // formatValue={(n) => prettyBytes(n)}
+                  transitions={(index) => ({
+                    type: "spring",
+                    duration: index + 0.3,
+                  })}
                 />
 
                 {achievement.postfix || ""}

@@ -12,10 +12,7 @@
     "@heroicons/react": "^2.0.18",
     "next": "^14.0.5-canary.53",
     "nodemailer": "^6.9.8",
-    "react": "latest",
-    "react-animated-number": "^0.4.4",
-    "react-animated-numbers": "^0.16.0",
-    "react-dom": "latest",
+    "react-animated-numbers": "^0.17.1",
     "react-type-animation": "^3.1.0",
     "resend": "^1.1.0"
   },
@@ -24,6 +21,8 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "latest"
   }
 }
