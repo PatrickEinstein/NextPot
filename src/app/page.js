@@ -1,3 +1,4 @@
+"use client";
 import HeroSection from "./component/HeroSection";
 import Navbar from "./component/Navbar";
 import AboutSections from "./component/AboutSections";
