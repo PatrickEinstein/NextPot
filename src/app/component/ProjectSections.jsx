@@ -6,7 +6,8 @@ import ProjectTag from "./ProjectTag";
 const projectsData = [
   {
     id: 1,
-    title: "Bills API to buy Airtime, Data, ELectricity and Cable Subscriptions",
+    title:
+      "Bills API to buy Airtime, Data, ELectricity and Cable Subscriptions",
     description: "Test API platform for bills api",
     image: "/images/projects/BILLS.jpg",
     tag: ["All", "Web"],
@@ -22,33 +23,32 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-    {
-      id: 3,
-      title: "Payments Merchant",
-      description: "Payment Merchants for PelPay and ChmasPay",
-      image: "/images/projects/Merchant.jpg",
-      tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
-    },
-    {
-      id: 4,
-      title: "Payments Admins",
-      description: "Admins and SuperAdmins Api for PelPay and ChamsPay",
-      image: "/images/projects/Admin.jpg",
-      tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
-    },
-    {
-      id: 5,
-      title: "My 3D potfolio",
-      description: "3D potfolio with 3D js",
-      image: "/images/projects/3dfolio.png",
-      tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
-  
+  {
+    id: 3,
+    title: "Payments Merchant",
+    description: "Payment Merchants for PelPay and ChmasPay",
+    image: "/images/projects/Merchant.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 4,
+    title: "Payments Admins",
+    description: "Admins and SuperAdmins Api for PelPay and ChamsPay",
+    image: "/images/projects/Admin.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 5,
+    title: "My 3D potfolio",
+    description: "3D potfolio with 3D js",
+    image: "/images/projects/3dfolio.png",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "/",
   },
   {
     id: 6,
@@ -130,7 +130,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-  }, 
+  },
   {
     id: 15,
     title: "Dotnet Certificate",
@@ -158,7 +158,6 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-
 ];
 
 const ProjectSections = () => {
@@ -168,9 +167,9 @@ const ProjectSections = () => {
     setTag(newTag);
   };
 
-  const filteredProjects = projectsData.filter((project) => (
+  const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
-  ));
+  );
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white">My Projects</h2>
@@ -190,7 +189,7 @@ const ProjectSections = () => {
           name="Mobile"
           isSelected={tag === "Mobile"}
         />
-         <ProjectTag
+        <ProjectTag
           onClick={() => handleTagChange("Certifications")}
           name="Certifications"
           isSelected={tag === "Certifications"}
