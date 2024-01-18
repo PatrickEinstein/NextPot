@@ -1,5 +1,5 @@
 "use client";
-import React, { useState,useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(null);
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const data = {
@@ -14,31 +15,29 @@ const EmailSection = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-
-    
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/sendMail";
-    const options = {
+    const response = await fetch("../api/sendMail.js", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSONdata,
-    };
-    const response = await fetch(endpoint, options);
+      body: JSON.stringify(data),
+    });
     const resData = await response.json();
 
     if (response.status === 200) {
       console.log("Message sent.");
       setEmailSubmitted(true);
     } else {
-        setEmailSubmitted(false);
-        console.log(resData)
+      setEmailSubmitted(false);
+      console.log(resData);
     }
-  },[]);
+  }, []);
 
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 text-white" id="contact">
+    <section
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 text-white"
+      id="contact"
+    >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-30 blur-lg absolute top-3/4-left-4 transform -translate-x-1/2 -translate-y-12"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white ">Let's Connect</h5>
@@ -112,7 +111,7 @@ const EmailSection = () => {
           >
             Send Message
           </button>
-          {emailSubmitted && <p>Email sent successfully</p> }
+          {emailSubmitted && <p>Email sent successfully</p>}
         </form>
       </div>
     </section>
