@@ -9,7 +9,7 @@ const projectsData = [
     title:
       "Bills API to buy Airtime, Data, ELectricity and Cable Subscriptions",
     description: "Test API platform for bills api",
-    image: "/images/projects/BILLS.jpg",
+    image: "../../../public/images/projects/BILLS.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
