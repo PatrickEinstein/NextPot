@@ -72,7 +72,7 @@ const AboutSections = () => {
     <sections className="text-white ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-          src="/images/projects/Passport.jpeg"
+          src="https://i.ibb.co/rd00YGk/me-pat.png"
           alt="Passport"
           width={500}
           height={500}
