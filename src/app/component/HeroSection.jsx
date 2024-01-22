@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import ME from "../projects/me-pat.png"
 
 const HeroSection = () => {
   return (
