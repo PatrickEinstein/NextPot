@@ -7,8 +7,11 @@ import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const data = {
       mail: [e.target.email.value, "mohammedola1234@gmail.com"],
@@ -23,11 +26,14 @@ const EmailSection = () => {
       body: JSON.stringify(data),
     });
     const resData = await response.json();
-    console.log(resData);
     if (response.status === 200) {
       setEmailSubmitted(true);
+      setResponse(resData);
+      setLoading(false);
     } else {
       setEmailSubmitted(false);
+      setResponse(resData);
+      setLoading(false);
     }
   };
 
@@ -37,7 +43,7 @@ const EmailSection = () => {
       id="contact"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-30 blur-lg absolute top-3/4-left-4 transform -translate-x-1/2 -translate-y-12"></div>
-      <div className="z-10">
+      <div className="">
         <h5 className="text-xl font-bold text-white ">Let's Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           I am currently looking for new oppurtunities, my inbox is always open,
@@ -109,7 +115,7 @@ const EmailSection = () => {
           >
             Send Message
           </button>
-          {emailSubmitted && <p>Email sent successfully</p>}
+          {!isLoading ? { response } : <p>Sending</p>}
         </form>
       </div>
     </section>
