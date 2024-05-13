@@ -8,14 +8,14 @@ import Image from "next/image";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(null);
 
-  const handleSubmit = useCallback(async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      email: e.target.email.value,
+      mail: [e.target.email.value, "mohammedola1234@gmail.com"],
       subject: e.target.subject.value,
-      message: e.target.message.value,
+      text: `message from ${e.target.email.value}, ${e.target.message.value}`,
     };
-    const response = await fetch("../api/sendMail.js", {
+    const response = await fetch("http://159.138.173.19:2022/api/sendMail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,15 +23,13 @@ const EmailSection = () => {
       body: JSON.stringify(data),
     });
     const resData = await response.json();
-
+    console.log(resData);
     if (response.status === 200) {
-      console.log("Message sent.");
       setEmailSubmitted(true);
     } else {
       setEmailSubmitted(false);
-      console.log(resData);
     }
-  }, []);
+  };
 
   return (
     <section

@@ -71,14 +71,22 @@ const AboutSections = () => {
   return (
     <sections className="text-white ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl:px-16">
-        <Image
-          src="https://i.ibb.co/rd00YGk/me-pat.png"
-          alt="Passport"
-          width={500}
-          height={500}
-        />
-       
-
+        <div className="flex flex-col">
+          <div
+            className="rounded-full bg-[#181818] w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] relative"
+            style={{
+              background: `url(https://i.ibb.co/rd00YGk/me-pat.png)`,
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div
+            className="rounded-full bg-[#181818] w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] relative"
+            style={{
+              background: `url(https://i.ibb.co/rd00YGk/me-pat.png)`,
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full" id="about">
           <h1 className="text-4xl font-bold text-white mb-4">About ME</h1>
           <p className="text-color lg:text-lg">
