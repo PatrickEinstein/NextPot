@@ -115,7 +115,7 @@ const EmailSection = () => {
           >
             Send Message
           </button>
-          {!isLoading ? { response } : <p>Sending</p>}
+          {!isLoading ? response.message  : <p>Sending</p>}
         </form>
       </div>
     </section>
