@@ -27,6 +27,7 @@ const HeroSection = () => {
                 "Frontend, Backend, Android and IOS engineering",
                 1000,
               ]}
+              
               wrapper="span"
               speed={50}
               repeat={Infinity}
