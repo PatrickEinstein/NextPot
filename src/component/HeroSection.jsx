@@ -16,18 +16,19 @@ const HeroSection = () => {
               sequence={[
                 "My name is Patrick",
                 1000,
+
                 "I'm a Full Stack software enginner ",
                 1000,
                 "An a Software Architect",
                 1000,
-                "Lolz!! just joking",
+                "That's what you need",
                 2000,
-                "Oh No!! I am an expert in Payment Processing Systems!!!",
+                "Oh Yes!! I am an expert in Payment Processing Systems!!!",
                 2000,
                 "Frontend, Backend, Android and IOS engineering",
                 1000,
               ]}
-              
+
               wrapper="span"
               speed={50}
               repeat={Infinity}
