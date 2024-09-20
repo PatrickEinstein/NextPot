@@ -19,7 +19,7 @@ const HeroSection = () => {
 
                 "I'm a Full Stack software enginner ",
                 1000,
-                "An a Software Architect",
+                "and a Software Architect",
                 1000,
                 "That's what you need",
                 2000,

@@ -96,7 +96,7 @@ const AboutSections = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full" id="about">
           <h1 className="text-4xl font-bold text-white mb-4">About me</h1>
           <p className="text-color lg:text-lg">
-            I am the fullstack developer you need, i creade Interactive
+            I am the fullstack developer and software architect that you need, i create Interactive
             websites, 3D websites , secured Fullstack web applications. I am
             experienced in:
             <em>Object Oriented Programming</em>
